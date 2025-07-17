@@ -1,69 +1,33 @@
-# React + TypeScript + Vite
+🌟 Gemini Clone AI Chatbot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional Gemini-like AI chatbot built using Vite + React + TypeScript, styled with SCSS and Bootstrap, and integrated with Google Gemini API. This frontend-only application includes a complete login flow with OTP simulation.
 
-Currently, two official plugins are available:
+✨ **Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    🔐 Login with OTP (country-based phone number, simulated OTP)
+    💬 Gemini AI Chatbot powered by Google Generative AI
+    ⚡ Built using Vite for fast development
+    🎨 Modern and responsive UI using SCSS + Bootstrap
+    📦 Fully written in TypeScript
+    💾 Stores login data in localStorage
+    🚫 No backend required — frontend only
 
-## Expanding the ESLint configuration
+📁 **Tech Stack**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    **Tech**	              ** Description**
+    React	                  Frontend library
+    Vite	                  Fast dev server & build tool
+    TypeScript	            Type safety
+    Bootstrap 5	            UI components
+    SCSS	                  Custom styling
+    React Hook Form	        Form handling
+    Zod	                    Form validation
+    Toastify	              Notifications
+    Axios	                  API requests
+    Google GenAI	          Gemini-powered AI responses
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Install dependencies**
+   npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Start the development server**
+  npm run dev
