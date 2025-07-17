@@ -1,0 +1,232 @@
+#chat-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .chat-content {
+    width: 100%;
+    height: 72%;
+    margin: 0 auto;
+    overflow: auto;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+
+    .welcome {
+      width: 45rem;
+      height: 100%;
+      font-size: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+
+      span {
+        color: gainsboro;
+      }
+
+      .name {
+        background-image: linear-gradient(to right, blue, red);
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    .response-box {
+      width: 45rem;
+      display: flex;
+
+      &-user {
+        justify-content: flex-end;
+      }
+
+      .prompt-message {
+        width: max-content;
+        padding: 0.75rem 1rem;
+        background-color: #e9eef6;
+        border-radius: 0.75rem;
+        border-top-right-radius: 0.15rem;
+      }
+      .response-message {
+        width: 45rem;
+        display: flex;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        // background-color: #f1f4f9;
+        // border-radius: 0.75rem;
+        // border-top-left-radius: 0.15rem;
+
+        img {
+          flex-shrink: 0;
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+
+        p {
+          margin: 0;
+          margin-top: 0.25rem;
+          color: gray;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          white-space: pre-wrap;
+
+          strong {
+            font-weight: 600;
+          }
+
+          em {
+            font-style: italic;
+          }
+
+          ul,
+          ol {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+          }
+
+          li {
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
+    }
+    .loading-skeleton {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.5rem 0;
+
+      .skeleton-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        width: 100%;
+
+        .skeleton-line {
+          height: 12px;
+          border-radius: 6px;
+          background: linear-gradient(90deg, #eee 25%, #ddd 37%, #eee 63%);
+          background-size: 400% 100%;
+          animation: shimmer 1.2s ease-in-out infinite;
+
+          &.short {
+            width: 30%;
+          }
+
+          &:not(.short) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      border-top-color: #666;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+  }
+
+  .chat-input {
+    width: 45rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1.5px solid gainsboro;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--font-color);
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .file-action {
+      input {
+        display: none;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+      border: none;
+      height: 4rem;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
+    .input-icons {
+      width: 75%;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    span {
+      line-height: normal;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      svg {
+        font-size: 1.25rem;
+      }
+    }
+
+    &-upload {
+      textarea {
+        width: 75%;
+      }
+
+      .file-preview {
+        display: flex;
+        gap: 0.5rem;
+        img {
+          height: 3rem;
+          width: 3rem;
+          object-fit: cover;
+          border-radius: 0.25rem;
+        }
+
+        svg {
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .note {
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    margin: 0;
+    text-align: center;
+    color: var(--font-color);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
